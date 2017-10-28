@@ -8,11 +8,87 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+<!--button FAB bottom right fixed-->
+  <ion-fab right bottom>
+    <button ion-fab color="primary"><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button navPush="AddShoppingItemPage" ion-fab><ion-icon name="briefcase"></ion-icon></button>
+      <button ion-fab><ion-icon name="clipboard"></ion-icon></button>
+      <button ion-fab><ion-icon name="contacts"></ion-icon></button>
+      <button ion-fab><ion-icon name="document"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+<!---->
+
+
+
+
+
+
+
+  <ion-grid>
+  
+    <ion-row>
+    <ion-col col-6>
+      <ion-fab >
+          <button navPush="AddShoppingItemPage" ion-fab mini><ion-icon name="add"></ion-icon></button>
+        </ion-fab>
+      <ion-card>
+        <ion-icon name="briefcase"></ion-icon>
+        <div class="card-title">
+          <button class="cat-btn" navPush="BriefsListPage">Briefs</button>
+        </div>
+      </ion-card>
+      
+    </ion-col>
+    <ion-col col-6>
+      <ion-fab >
+          <button navPush="AddShoppingItemPage" ion-fab mini><ion-icon name="add"></ion-icon></button>
+        </ion-fab>
+      <ion-card>
+        <ion-icon name="clipboard"></ion-icon>
+        <div class="card-title">
+          <button class="cat-btn" navPush="BriefsListPage">Proj</button>
+        </div>
+      </ion-card>
+      
+    </ion-col>
+    </ion-row>
+    
+    <ion-row>
+    <ion-col col-6>
+      <ion-fab >
+          <button navPush="AddShoppingItemPage" ion-fab mini><ion-icon name="add"></ion-icon></button>
+        </ion-fab>
+      <ion-card>
+        <ion-icon name="contacts"></ion-icon>
+        <div class="card-title">
+          <button class="cat-btn" navPush="BriefsListPage">Clienti</button>
+        </div>
+      </ion-card>
+      
+    </ion-col>
+    <ion-col col-6>
+      <ion-fab >
+          <button navPush="AddShoppingItemPage" ion-fab mini><ion-icon name="add"></ion-icon></button>
+        </ion-fab>
+      <ion-card>
+        <ion-icon name="document"></ion-icon>
+        <div class="card-title">
+          <button class="cat-btn" navPush="BriefsListPage">Doc</button>
+        </div>
+      </ion-card>
+      
+    </ion-col>
+    </ion-row>   
+  </ion-grid>
+
+  
+
+  <button ion-button (click)="takePhoto()">Take Photo</button>
+
+
 </ion-content>
+

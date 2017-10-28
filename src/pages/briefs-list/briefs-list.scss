@@ -1,0 +1,23 @@
+page-briefs-list {
+	ion-icon{
+			font-size:4em;
+			padding-top:5%;
+		}
+	
+		ion-card {
+			position: relative;
+			text-align: center;
+		}
+
+		.card-title {
+			position: relative;
+			font-size: 1.2em;
+			width: 100%;
+			color: #000;
+			padding:5%;
+		}
+		ion-fab[right] {
+    		right: 0;
+		}
+		
+}
