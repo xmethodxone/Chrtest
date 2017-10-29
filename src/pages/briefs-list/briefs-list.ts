@@ -32,6 +32,7 @@ export class BriefsListPage {
 }
   
   	key: 'value-here'
-  	name: 'iPad Pro'
+  	name: 'nome'
+    description: 'descrizione'
   
 }

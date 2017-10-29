@@ -16,7 +16,12 @@
 
 	<ion-item>
 		<ion-label>Name</ion-label>
-		<ion-textarea [(ngModel)]="item.name" placeholder="Inserisci modifica"></ion-textarea>
+		<ion-input [(ngModel)]="item.name" placeholder="Modifica nome"></ion-input>
+	</ion-item>
+
+	<ion-item>
+		<ion-label>Description</ion-label>
+		<ion-textarea [(ngModel)]="item.description" placeholder="Modifica descrizione"></ion-textarea>
 	</ion-item>
 
 	<ion-item>
@@ -30,5 +35,19 @@
 	</ion-item>
 	
 	<button ion-button block clear (click)="saveItem(item)">Save</button>
-	<button ion-button block clear color="danger" (click)="removeItem(item)">Delete</button>
+	<button ion-button block clear (click)="removeItem(item)">Remove</button>
+
+	<button ion-button color="danger" block (click)="openModal()">Modal</button>
+
+
+	<ion-fab right bottom>
+      <button ion-fab color="light"><ion-icon name="arrow-dropleft"></ion-icon></button>
+      
+        <button ion-fab><ion-icon name="trash" (click)="presentConfirm()"></ion-icon></button>
+        <button ion-fab><ion-icon name="md-information-circle" (click) ="infoAlert()"></ion-icon></button>       
+      
+    </ion-fab>
+
+
+
 </ion-content>

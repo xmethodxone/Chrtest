@@ -29,6 +29,7 @@
 		
 		<ion-item *ngFor="let item of shoppingList$ | async" detail-push navPush="EditShoppingItemPage" [navParams]="{item: item}">
 			<h4>Nome: {{item.name}}</h4>
+			<p>Nome: {{item.description}}</p>
 			<p>{{item.price}}, {{item.quantity}}</p>
 		</ion-item>	
 	</ion-list>

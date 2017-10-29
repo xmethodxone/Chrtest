@@ -17,7 +17,12 @@
 
 	<ion-item>
 		<ion-label>Brief</ion-label>
-		<ion-textarea [(ngModel)]="item.name" placeholder="Inserisci brief"></ion-textarea>
+		<ion-input [(ngModel)]="item.name" placeholder="Inserisci brief"></ion-input>
+	</ion-item>
+
+	<ion-item>
+		<ion-label>Descrizione</ion-label>
+		<ion-textarea [(ngModel)]="item.description" placeholder="Inserisci descrizione"></ion-textarea>
 	</ion-item>
 
 	<ion-item>

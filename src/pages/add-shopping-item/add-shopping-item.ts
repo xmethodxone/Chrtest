@@ -14,6 +14,7 @@ export class AddShoppingItemPage {
 
   item: Item = {
   	name: '',
+    description: '',
   	quantity: 0,
   	price: 0
   };

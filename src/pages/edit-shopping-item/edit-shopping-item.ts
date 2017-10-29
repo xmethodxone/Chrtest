@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ToastService } from '../../services/toast/toast.service';
 import { ShoppingListService } from '../../services/shopping-list/shopping-list.service';
 import { Item } from '../../models/item/item.model';
+import { AlertController } from 'ionic-angular';
+
 /**
  * Generated class for the EditShoppingItemPage page.
  *
@@ -19,7 +21,10 @@ export class EditShoppingItemPage {
 
   item: Item;
 
-  constructor(public navCtrl: NavController, 
+  constructor(
+    //private modal:ModalController,
+    private alertCtrl: AlertController,
+    public navCtrl: NavController, 
   	public navParams: NavParams,
   	private shopping: ShoppingListService,
   	private toast: ToastService) {
@@ -37,13 +42,42 @@ export class EditShoppingItemPage {
   		});
   }
 
+
+
+
+
+
   removeItem(item: Item) {
-  	this.shopping.removeItem(item)
-  		.then(() => {
-  			this.toast.show(`${item.name} removed!`);
-  			this.navCtrl.setRoot('BriefsListPage');
-  		});
-  }
+
+    let alert = this.alertCtrl.create({
+      title: 'Conferma la rimozione',
+      buttons: [
+        'No',
+        {
+          text:'Si!',
+          handler:() => {
+            
+            this.shopping.removeItem(item)
+              .then(() => {
+                this.toast.show(`${item.name} removed!`);
+                this.navCtrl.setRoot('BriefsListPage');
+            });
+            
+
+          }
+        }
+      ]
+
+    })
+alert.present(alert);
+}
+
+
+
+
+
+
+
 
 
 }
