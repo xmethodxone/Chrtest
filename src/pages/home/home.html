@@ -77,7 +77,7 @@
       <ion-card>
         <ion-icon name="document"></ion-icon>
         <div class="card-title">
-          <button class="cat-btn" navPush="BriefsListPage">Doc</button>
+          <button class="cat-btn" navPush="BriefsListPage">Documenti</button>
         </div>
       </ion-card>
       
@@ -89,6 +89,6 @@
 
   <button ion-button (click)="takePhoto()">Take Photo</button>
 
-
+<img [src]="image" *ngIf="image" />
 </ion-content>
 
