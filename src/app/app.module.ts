@@ -15,6 +15,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { MyApp } from './app.component';
 import { FIREBASE_CONFIG } from './firebase.credentials';
 import { ShoppingListService } from './../services/shopping-list/shopping-list.service'; 
+
 import { Camera } from '@ionic-native/camera';
 
 @NgModule({

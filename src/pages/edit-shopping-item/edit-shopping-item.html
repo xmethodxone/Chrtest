@@ -35,17 +35,13 @@
 	</ion-item>
 	
 	<button ion-button block clear (click)="saveItem(item)">Save</button>
-	<button ion-button block clear (click)="removeItem(item)">Remove</button>
-
-	<button ion-button color="danger" block (click)="openModal()">Modal</button>
+	<button ion-button block color="danger" (click)="removeItem(item)">Remove</button>
 
 
 	<ion-fab right bottom>
       <button ion-fab color="light"><ion-icon name="arrow-dropleft"></ion-icon></button>
-      
-        <button ion-fab><ion-icon name="trash" (click)="presentConfirm()"></ion-icon></button>
-        <button ion-fab><ion-icon name="md-information-circle" (click) ="infoAlert()"></ion-icon></button>       
-      
+      <button ion-fab><ion-icon name="trash" (click)="presentConfirm()"></ion-icon></button>
+      <button ion-fab><ion-icon name="md-information-circle" (click) ="infoAlert()"></ion-icon></button>
     </ion-fab>
 
 

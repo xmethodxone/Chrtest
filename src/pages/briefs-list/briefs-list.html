@@ -24,14 +24,20 @@
 
 
 <ion-content padding>
-
-	<ion-list>
-		
+	
+	<ion-list *ngIf="(shoppingList$ | async)?.length>0">
+			
 		<ion-item *ngFor="let item of shoppingList$ | async" detail-push navPush="EditShoppingItemPage" [navParams]="{item: item}">
 			<h4>Nome: {{item.name}}</h4>
 			<p>Nome: {{item.description}}</p>
 			<p>{{item.price}}, {{item.quantity}}</p>
 		</ion-item>	
+			
 	</ion-list>
+	
+	<div *ngIf="(shoppingList$ | async)?.length==0">
+		<h2>Nessun Briefing Caricato</h2>
+	</div>
+
 
 </ion-content>

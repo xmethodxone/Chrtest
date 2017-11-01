@@ -4,6 +4,7 @@ import { AngularFireAuth } from "angularfire2/auth";
 import { storage } from 'firebase';
 import { Camera, CameraOptions } from "@ionic-native/camera";
 
+
 @IonicPage()
 @Component({
   selector: 'page-home',
@@ -11,15 +12,17 @@ import { Camera, CameraOptions } from "@ionic-native/camera";
 })
 export class HomePage {
 
+userAvatarPicture: Array<any> = new Array;//User picture array bcz we got random pic name
+
   constructor(
-  	private camera: Camera,
-	private afAuth: AngularFireAuth,
-	private toast: ToastController,
-  	public navCtrl: NavController) {
+    private camera: Camera,
+  	private afAuth: AngularFireAuth,
+  	private toast: ToastController,
+    public navCtrl: NavController) {
 
   }
 
-
+//Paul halley
   async takePhoto() {
   	try {
   	//Defining Camra options
@@ -35,13 +38,19 @@ export class HomePage {
   	const result = await this.camera.getPicture(options);
   	const image = `data:image/jpeg;base64.${result}`;
 
-  	const pictures = storage().ref('pictures/myPhoto');
+  	const pictures = storage().ref('pictures');
   	pictures.putString(image, 'data_url')
   }
   catch (e) {
   	console.error(e);
   }
 }
+
+
+
+
+
+
 
   ionViewWillLoad() {
   	this.afAuth.authState.subscribe(data => {
@@ -54,11 +63,15 @@ export class HomePage {
   		else {
 			this.toast.create({
 	  			message: `Could not find authentication details`,
-	  			duration: 3000
+	  			duration: 5000
 	  		}).present();
   		}
 
   	});
   }
+
+
+
+
 
 }
